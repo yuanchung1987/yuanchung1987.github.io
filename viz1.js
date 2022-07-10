@@ -90,5 +90,11 @@ svg.selectAll("mybar")
     
 
 // Animation
+svg.selectAll("rect")
+  .transition()
+  .duration(800)
+  .attr("y", function(d) { return y(d.EstimatedHesitant); })
+  .attr("height", function(d) { return height - y(d.EstimatedHesitant); })
+  .delay(function(d,i){console.log(i) ; return(i*100)})
 
 })
