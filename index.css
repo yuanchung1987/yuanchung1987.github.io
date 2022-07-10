@@ -3,7 +3,10 @@ body {
     margin: 3%;
     background-color: whitesmoke;
 }
-
+.content{
+    width: 500px;
+    margin: auto;
+}
 .pagination {
     display: inline-block;
 }
