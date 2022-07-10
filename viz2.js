@@ -82,19 +82,13 @@ svg.selectAll("mybar")
     .attr("width", x.bandwidth())
     .attr("fill", "#FFC875")
     // no bar at the beginning thus:
-    .attr("height", function(d) { return height - y(0); }) // always equal to 0
-    .attr("y", function(d) { return y(0); })
+    .attr("height", function(d) { return height - y(d.PercentageVaccinated); }) // always equal to 0
+    .attr("y", function(d) { return y(d.PercentageVaccinated); })
     .on("mouseover", mouseover)
     .on("mousemove", mousemove)
     .on("mouseleave", mouseleave)
     
 
 // Animation
-svg.selectAll("rect")
-  .transition()
-  .duration(800)
-  .attr("y", function(d) { return y(d.PercentageVaccinated); })
-  .attr("height", function(d) { return height - y(d.PercentageVaccinated); })
-  .delay(function(d,i){console.log(i) ; return(i*100)})
 
 })
