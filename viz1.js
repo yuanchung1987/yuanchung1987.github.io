@@ -82,19 +82,14 @@ svg.selectAll("mybar")
     .attr("width", x.bandwidth())
     .attr("fill", "#d93927")
     // no bar at the beginning thus:
-    .attr("height", function(d) { return height - y(0); }) // always equal to 0
-    .attr("y", function(d) { return y(0); })
+    .attr("height", function(d) { return height - y(d.EstimatedHesitant); }) // always equal to 0
+    .attr("y", function(d) { return y(d.EstimatedHesitant); })
     .on("mouseover", mouseover)
     .on("mousemove", mousemove)
     .on("mouseleave", mouseleave)
     
 
 // Animation
-svg.selectAll("rect")
-  .transition()
-  .duration(800)
-  .attr("y", function(d) { return y(d.EstimatedHesitant); })
-  .attr("height", function(d) { return height - y(d.EstimatedHesitant); })
-  .delay(function(d,i){console.log(i) ; return(i*100)})
+
 
 })
