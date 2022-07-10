@@ -1,6 +1,6 @@
 // set the dimensions and margins of the graph
 var margin = {top: 10, right: 30, bottom: 90, left: 40},
-    width = 1500 - margin.left - margin.right,
+    width = 1600 - margin.left - margin.right,
     height = 600 - margin.top - margin.bottom;
 
 var tooltip = d3.select("#my_dataviz")
@@ -48,7 +48,7 @@ var svg = d3.select("#my_dataviz")
           "translate(" + margin.left + "," + margin.top + ")");
 
 // Parse the Data
-d3.csv("https://raw.githubusercontent.com/yuanchung1987/yuanchung1987.github.io/main/data/us-states-overall.csv?token=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", function(data) {
+d3.csv("https://raw.githubusercontent.com/madhusivaraj/data-visualization/main/Narrative%20Visualization/data/us-states-overall.csv?token=AJ4IWW6SFK3A3UXP4JUPI5DBBDKCK", function(data) {
 
     data.sort(function(b, a) {
         return a.PercentageVaccinated - b.PercentageVaccinated;
