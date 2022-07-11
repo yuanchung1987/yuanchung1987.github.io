@@ -62,7 +62,7 @@ function LoadScene() {
          .attr("r", function(d,i) { return ( 5 + (2 * parseInt(d.EngineCylinders))); })
          .attr("stroke", function(d) {
              if("Gasoline" == d.Fuel) return "red";
-             else if ("Diesel" == d.Fuel) return "yellow";
+             else if ("Diesel" == d.Fuel) return "green";
              else if ("Electricity" == d.Fuel) return "blue";
              else return "black";
          })
@@ -114,7 +114,7 @@ function LoadScene() {
         .attr("class", "mainXlabel")
         .attr("text-anchor", "end")
         .attr("x", parseInt(svg.style("width"))/2)
-        .attr("y", parseInt(svg.style("height")) - 65)
+        .attr("y", parseInt(svg.style("height")) - 50)
         .style("font-family", "verdana")
         .style("fill", "dark gray")             
         .text("Average City Mileage (MPG)");    
@@ -146,7 +146,7 @@ function LoadScene() {
         .attr("y", parseInt(svg.style("height")) - 250)
         .attr("dy", "1em")
         .style("font-family", "verdana")   
-        .style("fill", "olive")     
+        .style("fill", "red")     
         .text(function(d) {
             return "Red Circle: Gasoline Car.";
         })
@@ -156,9 +156,9 @@ function LoadScene() {
     .attr("y", parseInt(svg.style("height")) - 250)
     .attr("dy", "2em")
     .style("font-family", "verdana")
-    .style("fill", "olive")             
+    .style("fill", "green")             
     .text(function(d) {
-            return "Yellow Circle: Diesel Car.";
+            return "Green Circle: Diesel Car.";
     })
     svg.append("text")
     .attr("class", "annotation")
@@ -166,19 +166,29 @@ function LoadScene() {
     .attr("y", parseInt(svg.style("height")) - 250)
     .attr("dy", "3em")
     .style("font-family", "verdana")   
-    .style("fill", "olive")          
+    .style("fill", "blue")          
     .text(function(d) {
             return "Blue Circle: Electric Car.";
     })
     svg.append("text")
+    .attr("class", "annotation")
+    .attr("x", parseInt(svg.style("width")) - 410)
+    .attr("y", parseInt(svg.style("height")) - 600)
+    .style("font-family", "verdana")
+    .style("fill", "olive")             
+    .text(function(d) {
+        if(null == SelectedMake)            
+            return "Electric cars: Range on full charge instead of MPG.";
+})
+    svg.append("text")
         .attr("class", "annotation")
-        .attr("x", parseInt(svg.style("width")) - 410)
-        .attr("y", parseInt(svg.style("height")) - 600)
+        .attr("x", parseInt(svg.style("width")) - 910)
+        .attr("y", parseInt(svg.style("height")) - 400)
         .style("font-family", "verdana")
         .style("fill", "olive")             
         .text(function(d) {
             if(null == SelectedMake)            
-                return "Electric cars: Range on full charge instead of MPG.";
+                return "Diesel cars have higher MPG than Gasoline cars.";
     })
     svg.append("text")
         .attr("class", "annotation")

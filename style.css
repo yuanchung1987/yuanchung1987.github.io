@@ -5,7 +5,7 @@ circle {
 }
 
 .mouseover-maker {
-    fill: lightgray;
+    fill: lightblue;
 }
 
 .checkbox {
@@ -24,4 +24,5 @@ circle {
 .heading {
     color:black;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: xx-large;
 }
