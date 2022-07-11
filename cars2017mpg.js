@@ -69,10 +69,14 @@ function LoadScene() {
          .on('mouseover', function(d)
          {
              d3.select(this).classed("mouseover-maker", true);
+             d3.selectAll("circle").style("opacity", 0.2)
+             d3.select(this).style("opacity", 1)
+             
          })
          .on('mouseout', function(d)
          {
              d3.select(this).classed("mouseover-maker", false);
+             d3.selectAll("circle").style("opacity",1)
          })
          .on('click', function(d)
          {
