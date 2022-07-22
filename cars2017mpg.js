@@ -8,10 +8,9 @@ function Init() {
 }
 
 async function LoadDataSet(_callback_function) {
-    /* Load Dataset */
+// Load data set
     Data = await d3.csv("https://flunky.github.io/cars2017.csv");
-
-    /* Data set is loaded. Now call the callback function to create the scene */
+// Data set loaded and call the function
     _callback_function();
 }
 
@@ -28,18 +27,18 @@ function SetupUIParams() {
     SelectedFuels.clear();
     if(null != SelectedFuel)
         SelectedFuels.add(SelectedFuel);  
-    /* Set the Title based on the Scene we are in */
+// Set the title of the scene
     SetTitleAndCheckBoxes();
 }
 
 function LoadScene() {
 
-    /* Get the data based on the scene we are in */
+// Get the data based on current scene
     const data = getSelectedMakerFuelData();
 
     var svg = d3.select("svg");
 
-    /* Clear the previous scene */
+// Clear the previous scene
     svg.selectAll("*").remove();
 
     var padding = {top:100, right:100, bottom:100, left:100};
@@ -207,7 +206,7 @@ function LoadScene() {
 }
 
 function GoHome() {
-    /* Got back to Scene1 */
+// Back to the first scene
     SelectedMaker = null;
     window.location.href = "index.html";
 }
