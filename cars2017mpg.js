@@ -218,7 +218,7 @@ function SetTitleAndCheckBoxes() {
         document.getElementById(SelectedFuel + "-checkbox").checked = true; 
     }
     else {
-        document.getElementById("heading").innerText = "Fuel Efficiency of Model Year 2017 Cars";
+        document.getElementById("heading").innerText = "2017 Fuel Efficiency by Car Manufacturers";
     }
 }
 
